@@ -1,0 +1,54 @@
+-- SOAL 1
+SELECT DISTINCT kota 
+FROM customer_address
+
+-- SOAL 2
+SELECT * 
+FROM orders
+ORDER BY tanggal_pembelian DESC
+LIMIT 10
+
+-- SOAL 3
+SELECT * 
+FROM customer
+WHERE penipu = 1
+
+--SOAL 4
+SELECT * 
+FROM orders
+WHERE metode_bayar = 'shopeepay'
+ORDER BY kuantitas DESC
+
+-- SOAL 5
+CREATE TABLE customer_address_tangerang AS 
+SELECT * FROM customer_address 
+WHERE kota = 'Tangerang';
+
+SELECT * FROM customer_address_tangerang;
+
+-- SOAL 6
+UPDATE customer_address_tangerang
+SET provinsi = 'Banten'
+WHERE kota = 'Tangerang';
+
+SELECT * FROM customer_address_tangerang;
+---------------------------
+UPDATE customer_address_tangerang
+SET alamat = 'Karawaci'
+WHERE id_pelanggan = 10;
+
+SELECT * FROM customer_address_tangerang;
+
+-- SOAL 7
+INSERT INTO customer_address_tangerang (id_alamat, id_pelanggan, alamat, kota, provinsi)
+VALUES (101, 70, 'Ciledug', 'Tangerang', 'Banten');
+
+SELECT * FROM customer_address_tangerang;
+
+-- SOAL 8
+DELETE FROM customer_address_tangerang
+WHERE id_alamat = 54;
+
+SELECT * FROM customer_address_tangerang;
+
+
